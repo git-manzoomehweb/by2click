@@ -1,0 +1,410 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="hotel-list" type="list" link="hotel.bc" order="ord" size="246x278"
+        propertyid="3087651,3087650,3087653,3087652" pageno="[##cms.query.pagenum|(1)##]" perpage="20" />
+    <member name="paging" type="list" request="paging" count="3" parentname="hotel-list" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214195">
+    <member name="best-hotel" type="list" link="hotel.bc" order="ord" size="246x278"
+        propertyid="3087651,3087650,3087653,3087652" perpage="8" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
+    <member name="p-underhotel" type="view" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(hotel booking | online booking | Alsama Tourism)##]</title>
+    <meta name="description"
+        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+    <!-- Taglist -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body>
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <main>
+        <section class="bg-hotelListBg bg-center bg-cover h-[341px] flex items-center relative">
+            <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
+            <div class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex flex-col items-center">
+                <h2 class="text-white font-medium text-xl drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">travel</h2>
+                <h1 class="text-white font-bold text-3xl drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">Dubai</h1>
+                <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+                    class="relative flex items-center gap-1 mt-2">
+                    <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a class="text-white hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
+                                itemprop="name">Home</span>
+                            <meta itemprop="position" content="1" />
+                        </a>
+                    </li>
+                    <span class="text-white"> > </span>
+                    <basis core="print" datamembername="db.navigation">
+                        <face filter="RowNumber=max(RowNumber) and parentcatid<>214170">
+                            <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </li>
+                        </face>
+                        <face filter="link is null and parentcatid<>214170">
+                            <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-white hover:text-primary-300" itemprop="item"
+                                    href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-white"> > </span>
+                            </li>
+                        </face>
+                        <face filter="parentcatid<>214170">
+                            <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-white hover:text-primary-300" itemprop="item" href="@link"
+                                    aria-label="@title"><span class="text-white hover:text-primary-300"
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-white"> > </span>
+                            </li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+            <div class="flex items-center gap-1 mb-6">
+                <svg width="44" height="46">
+                    <use xlink:href="./images/sprite-icons.svg#icon-fire"></use>
+                </svg>
+                <div>
+                    <h2 class="font-medium text-gradient">Travel affordably with us</h2>
+                    <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
+                </div>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper swiper-best-hotel-list-mobile pb-14">
+                <basis core="list" datamembername="db.best-hotel">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="swiper-slide">
+                            <div class="relative rounded-xl overflow-hidden">
+                                <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                                    <svg width="18" height="18">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                                    </svg>
+                                    @prp_3087651
+                                </span>
+                                <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title"
+                                    width="100%" height="278">
+                                <svg preserveAspectRatio="none" width="226" height="138"
+                                    class="absolute bottom-0 z-10 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                                </svg>
+                                <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                                </svg>
+                                <div preserveAspectRatio="none"
+                                    class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                    <h3 class="text-sm text-white">Hotel</h3>
+                                    <h2 class="font-bold text-xl text-white">@title</h2>
+                                    <div
+                                        class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        @prp_3087652 off</div>
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                        </div>
+                                        <a href="/hotel.bc?id=@id"
+                                            class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use
+                                                    xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="swiper-slide">
+                            <div class="relative rounded-xl overflow-hidden">
+                                <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                                    <svg width="18" height="18">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                                    </svg>
+                                    @prp_3087651
+                                </span>
+                                <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title"
+                                    width="100%" height="278">
+                                <svg preserveAspectRatio="none" width="226" height="138"
+                                    class="absolute bottom-0 z-10 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                                </svg>
+                                <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                                </svg>
+                                <div preserveAspectRatio="none"
+                                    class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                    <h3 class="text-sm text-white">Hotel</h3>
+                                    <h2 class="font-bold text-xl text-white">@title</h2>
+                                    <div
+                                        class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        @prp_3087652 off</div>
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                        </div>
+                                        <a href="@link"
+                                            class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use
+                                                    xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+            <basis core="list" datamembername="db.hotel-list">
+                <layout>
+                    <div class="flex flex-col gap-3">
+                        @child
+                    </div>
+                </layout>
+                <face filter="link is null">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                            <svg width="18" height="18">
+                                <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                            </svg>
+                            @prp_3087651
+                        </span>
+                        <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
+                            height="278">
+                        <svg preserveAspectRatio="none" width="226" height="138" class="absolute bottom-0 z-10 w-full">
+                            <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                        </svg>
+                        <svg width="247" height="146" class="absolute bottom-0 w-full">
+                            <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                        </svg>
+                        <div preserveAspectRatio="none" class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                            <h3 class="text-sm text-white">Hotel</h3>
+                            <h2 class="font-bold text-xl text-white">@title</h2>
+                            <div
+                                class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                @prp_3087652 off</div>
+                            <div class="flex items-center justify-between w-full">
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                    <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                </div>
+                                <a href="/hotel.bc?id=@id" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                        </use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </face>
+                <face>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                            <svg width="18" height="18">
+                                <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                            </svg>
+                            @prp_3087651
+                        </span>
+                        <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
+                            height="278">
+                        <svg preserveAspectRatio="none" width="226" height="138" class="absolute bottom-0 z-10 w-full">
+                            <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                        </svg>
+                        <svg width="247" height="146" class="absolute bottom-0 w-full">
+                            <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                        </svg>
+                        <div preserveAspectRatio="none" class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                            <h3 class="text-sm text-white">Hotel</h3>
+                            <h2 class="font-bold text-xl text-white">@title</h2>
+                            <div
+                                class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                @prp_3087652 off</div>
+                            <div class="flex items-center justify-between w-full">
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                    <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                </div>
+                                <a href="@link" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                        </use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+            <div id="paging" class="flex justify-center mt-9">
+                <ul class="flex items-center gap-1 cd-pagination no-space dir-ltr" id="wibpaging">
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full cursor-pointer"
+                                    aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full cursor-pointer"
+                                    aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-white page-number bg-primary-800"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
+                        </face>
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-white page-number bg-primary-800"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer "
+                                    aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+        </section>
+        <basis core="print" datamembername="db.p-underhotel">
+            <layout>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-9 mb-6">
+                        @child
+                </section>
+            </layout>
+            <face filter="TypeID in(150)">
+                <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
+            </face>
+            <face filter="TypeID in(129)">
+                <div class="text-zinc-900 text-sm text-justify">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+    </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <script>
+        var swiper = new Swiper(".swiper-best-hotel-list-mobile", {
+            slidesPerView: 1.3,
+            speed: 400,
+            centeredSlides: false,
+            spaceBetween: 12,
+            grabCursor: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

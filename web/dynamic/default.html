@@ -1,0 +1,700 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="20" name="tour-list">
+    <member name="cat" type="tree" request="cat" parentid="214205" order="ord"></member>
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214195">
+    <member name="best-hotel" type="list" link="hotel.bc" order="ord" size="246x278"
+        propertyid="3087651,3087650,3087653,3087652" perpage="8" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214241">
+    <member name="travel-magazine" type="list" link="article.bc" order="ord" size="567x345"
+        propertyid="7244,7249,3087660" perpage="8" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376278">
+    <member name="slogan-list" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376394">
+    <member name="banner" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376314">
+    <member name="our-history" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376484">
+    <member name="offer" type="view" />
+</basis>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+
+    <!-- Title & Description -->
+
+    <title>hotel booking | online booking | Alsama Tourism</title>
+
+    <meta name="description" content="Experience the best hotels and the easiest online booking with Alsama Toursim">
+
+    <!-- canonical for Homepage -->
+
+    <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
+
+    <!-- fill items with Agancy Info -->
+
+    <meta name="og:locale" content="en_US">
+
+    <meta property="og:title" content="hotel booking | online booking | Alsama Tourism ">
+
+    <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="Alsama Tourism ">
+
+    <meta property="og:image" content="http://www.by2click.com/images/custom_image_1200x630.png">
+
+    <meta property="og:image:alt" content=" Alsama Tourism logo">
+
+    <meta property="og:description" content="hotel booking | online hotel booking | hotel reservation | Alsama Toursim">
+
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:type" content="image/png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:site" content=" ">
+
+    <meta name="twitter:creator" content="Alsama Tourism">
+
+    <meta name="twitter:image" content="http://www.by2click.com/images/custom_image_1200x630.png">
+
+    <meta name="twitter:title" content=" ">
+
+    <meta name="twitter:description" content=" ">
+
+    <meta property="seo:robots" content="index, follow" />
+
+    <!-- samandehi-enamad optional -->
+
+    <meta name="enamad" content="" />
+
+    <meta name="samandehi" content="" />
+
+    <!-- pwa metatags -->
+
+    <basis core="call" file="pwa.inc" lid="2" />
+
+    <!-- define -->
+
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+
+    <!-- common styles for all page -->
+
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css"
+        rel="stylesheet" />
+    <basis core="call" file="style.inc" lid="2" />
+
+</head>
+
+<body onload="loadContentHomePage()">
+    <basis core="call" file="header.inc" lid="2" />
+    <main>
+        <section class="relative bg-defaultBg bg-cover py-36">
+            <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
+            <div class="z-10 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <div class="flex gap-12">
+                    <div class="relative flex flex-1 flex-col">
+                        <h3 class="text-white text-[64px] leading-[64px]">Have a great</h3>
+                        <h1 class="text-white font-bold text-[64px] leading-[68px]">travel experience.</h1>
+                        <basis core="print" datamembername="db.offer">
+                            <layout>
+                                <div
+                                    class="text-white text-sm rounded-lg self-start bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center p-2 mt-14">
+                                    @child
+                                </div>
+                            </layout>
+                            <face filter="TypeID in(129)">
+                                <span>@largetext</span>
+                            </face>
+                        </basis>
+
+                    </div>
+                    <!-- search engine  -->
+                    <div class="flex-[1.33]">
+                        <section id="search-box"
+                            class="load-search-box-in-condition hotel-search-engine search-box-container en">
+                            <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading">
+                                <span class="search-engine-loader"></span>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- search engine  -->
+                </div>
+            </div>
+
+
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg width="44" height="46">
+                        <use xlink:href="./images/sprite-icons.svg#icon-fire"></use>
+                    </svg>
+                    <div>
+                        <h2 class="font-bold text-gradient text-xl">Travel affordably with us</h2>
+                        <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div
+                        class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-white"></use>
+                        </svg>
+                    </div>
+                    <div
+                        class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper swiper-best-hotel pb-14">
+                <basis core="list" datamembername="db.best-hotel">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div
+                            class="swiper-slide rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-3">
+                            <div class="relative">
+                                <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                                    <svg width="18" height="18">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                                    </svg>
+                                    @prp_3087651
+                                </span>
+                                <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
+                                    height="278" loading="lazy">
+                                <svg preserveAspectRatio="none" width="226" height="138"
+                                    class="absolute bottom-0 z-10 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                                </svg>
+                                <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                                </svg>
+                                <div preserveAspectRatio="none"
+                                    class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                    <h3 class="text-sm text-white">Hotel</h3>
+                                    <h2 class="font-bold text-xl text-white">@title</h2>
+                                    <div
+                                        class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        @prp_3087652 off</div>
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                        </div>
+                                        <a href="/hotel.bc?id=@id"
+                                            class="relative group z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                            <div
+                                                class="absolute w-12 h-12 inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-full -z-10">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div
+                            class="swiper-slide rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-3">
+                            <div class="relative">
+                                <span class="flex items-center gap-1 absolute top-3 right-4 text-white">
+                                    <svg width="18" height="18">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-star"></use>
+                                    </svg>
+                                    @prp_3087651
+                                </span>
+                                <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
+                                    height="278" loading="lazy">
+                                <svg preserveAspectRatio="none" width="226" height="138"
+                                    class="absolute bottom-0 z-10 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
+                                </svg>
+                                <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-blue-shadow"></use>
+                                </svg>
+                                <div preserveAspectRatio="none"
+                                    class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                    <h3 class="text-sm text-white">Hotel</h3>
+                                    <h2 class="font-bold text-xl text-white">@title</h2>
+                                    <div
+                                        class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        @prp_3087652 off</div>
+                                    <div class="flex items-center justify-between w-full">
+                                        <div class="flex items-center gap-1">
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
+                                        </div>
+                                        <a href="@link"
+                                            class="relative group z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                            <div
+                                                class="absolute w-12 h-12 inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-full -z-10">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+            <basis core="print" datamembername="db.slogan-list">
+                <layout>
+                    <div class="flex gap-20">
+                        @child
+                    </div>
+                </layout>
+                <face filter="valueID in(4134418)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-headphone"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134419)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-flag"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134420)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-wallet"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134421)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-shield"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+            </basis>
+
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg width="44" height="46">
+                        <use xlink:href="./images/sprite-icons.svg#icon-heart"></use>
+                    </svg>
+                    <div>
+                        <h2 class="font-bold text-gradient text-xl">popular destinations</h2>
+                        <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div
+                        class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-white"></use>
+                        </svg>
+                    </div>
+                    <div
+                        class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper swiper-popular-destination pb-14">
+                <basis core="tree" datamembername="tour-list.cat" idcol="catid" parentidcol="parentid"
+                    nullvalue="214205">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="swiper-slide group">
+                            <div class="relative rounded-xl overflow-hidden">
+                                <div
+                                    class="bg-specialcolor-3 absolute inset-0 w-full h-full group-hover:opacity-0 transition-all duration-300">
+                                </div>
+                                <img src="@image" class="h-60 object-cover" alt="@title" width="100%" height="236"
+                                    loading="lazy">
+                                <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                    <div
+                                        class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        30% off</div>
+                                    <div class="mt-39 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">@title</h2>
+                                        </div>
+                                        <a href="/tour-list.bc?catid=@catid"
+                                            class="relative group/leveltwo z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                            <div
+                                                class="absolute w-12 h-12 inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="swiper-slide group">
+                            <div class="relative rounded-xl overflow-hidden">
+                                <div
+                                    class="bg-specialcolor-3 absolute inset-0 w-full h-full group-hover:opacity-0 transition-all duration-300">
+                                </div>
+                                <img src="@image" class="h-60 object-cover" alt="@title" width="100%" height="236"
+                                    loading="lazy">
+                                <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                    <div
+                                        class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        30% off</div>
+                                    <div class="mt-39 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">@title</h2>
+                                        </div>
+                                        <a href="@link"
+                                            class="relative group/leveltwo z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
+                                                </use>
+                                            </svg>
+                                            <div
+                                                class="absolute w-12 h-12 inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="bg-zinc-100 py-9 mt-24">
+            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-zinc-700 font-bold text-3xl">Where would you like to travel?</h2>
+                        <h3 class="text-zinc-900 text-sm">Choose the destination</h3>
+                    </div>
+                    <div
+                        class="relative cursor-pointer w-72 h-16 flex items-center justify-between border-b border-zinc-300 text-primary-900 menu-button">
+                        <span class="new-text">select city</span>
+                        <svg width="48" height="48" class="blue-dropdown transition-all duration-300">
+                            <use xlink:href="./images/sprite-icons.svg#icon-blue-dropdown"></use>
+                        </svg>
+                        <basis core="tree" datamembername="tour-list.cat" idcol="catid" parentidcol="parentid"
+                            nullvalue="214205">
+                            <layout>
+                                <ul
+                                    class="absolute left-0 z-40 w-full top-12 
+                                bg-white shadow-lg transition-all duration-300 transform scale-y-0 origin-top menu-dropdown">
+                                    @child
+                                </ul>
+                            </layout>
+                            <face>
+                                <li class="tour-li text-zinc-500 cursor-pointer px-4 py-2 transition-all duration-300 hover:bg-primary-800 hover:text-white"
+                                    data-id="@catid">
+                                    @title
+                                </li>
+                            </face>
+                        </basis>
+
+                    </div>
+                </div>
+                <basis core="tree" datamembername="tour-list.cat" idcol="catid" parentidcol="parentid"
+                    nullvalue="214205">
+                    <layout>
+                        <ul class="flex items-center gap-2 mt-3 mb-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
+                            @child
+                        </ul>
+                    </layout>
+                    <face>
+                        <li class="tour-li rounded-[50px] cursor-pointer bg-white py-2 px-5 text-zinc-500 text-sm transition-all duration-300 hover:bg-primary-800 hover:text-white"
+                            data-id="@catid">
+                            @title
+                        </li>
+                    </face>
+                </basis>
+
+                <div class="fetch-content-tour">
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="flex mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24 rounded-3xl overflow-hidden">
+            <div class="relative flex-[2.62]">
+                <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
+                <img src="[##cms.cms.cdn##]/images/offer.jpg" class="h-[370px] object-cover" alt="" width="100%"
+                    height="370" loading="lazy">
+                <basis core="print" datamembername="db.banner">
+                    <layout>
+                        <div class="absolute top-12 left-14">
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="TypeID in(150)">
+                        <h2 class="text-[64px] leading-[64px] text-white w-[626px] orange-text">@text</h2>
+                    </face>
+                </basis>
+            </div>
+            <div class="bg-zinc-100 px-9 py-10 flex-1">
+                <div class="flex flex-col">
+                    <img src="[##cms.cms.cdn##]/images/main-logo.png" class="self-end h-11 object-cover" alt="banner"
+                        width="87" height="43">
+                    <basis core="print" datamembername="db.banner">
+                        <face filter="TypeID in(129)">
+                            <div class="font-bold text-3xl text-zinc-900 mt-14 line-clamp-3">@largetext
+                            </div>
+                        </face>
+                    </basis>
+                    <a href=""
+                        class="relative group z-10 flex items-center justify-center bg-primary-800 w-full h-14 text-white rounded-lg mt-7">View
+                        More
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg -z-10">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="font-bold text-zinc-900 text-xl">Travel magazine</h2>
+                    <a href="/blog" class="relative group text-sm text-blue-600">View All blog
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div
+                        class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-white"></use>
+                        </svg>
+                    </div>
+                    <div
+                        class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper swiper-travel-magazine pb-14 mt-4">
+                <basis core="list" datamembername="db.travel-magazine">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="swiper-slide group">
+                            <div class="flex items-center gap-8">
+                                <div class="flex-1">
+                                    <img src="@00567X00345prp"
+                                        class="h-[345px] object-cover rounded-xl transition-all duration-300 group-hover:sepia"
+                                        alt="@title" width="100%" height="345" loading="lazy">
+                                </div>
+                                <div class="flex flex-col gap-3 flex-[1.17]">
+                                    <h2 class="text-zinc-900 font-bold text-2xl">@title</h2>
+                                    <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                                    <div class="flex items-center gap-6">
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender">
+                                                </use>
+                                            </svg>
+                                            @prp_7249
+                                        </span>
+
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                            </svg>
+                                            @prp_3087660
+                                        </span>
+                                    </div>
+                                    <a href="/article.bc?id=@id"
+                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
+                                        More
+                                        <div
+                                            class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="swiper-slide group">
+                            <div class="flex items-center gap-8">
+                                <div class="flex-1">
+                                    <img src="@00567X00345prp"
+                                        class="h-[345px] object-cover rounded-xl transition-all duration-300 group-hover:sepia"
+                                        alt="@title" width="100%" height="345" loading="lazy">
+                                </div>
+                                <div class="flex flex-col gap-3 flex-[1.17]">
+                                    <h2 class="text-zinc-900 font-bold text-2xl">@title</h2>
+                                    <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                                    <div class="flex items-center gap-6">
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender">
+                                                </use>
+                                            </svg>
+                                            @prp_7249
+                                        </span>
+
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                            </svg>
+                                            @prp_3087660
+                                        </span>
+                                    </div>
+                                    <a href="@link"
+                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
+                                        More
+                                        <div
+                                            class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <basis core="print" datamembername="db.our-history">
+            <layout>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-24">
+                    @child
+                </section>
+            </layout>
+            <face>
+                <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
+                <div class="text-zinc-900 text-sm text-justify">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+
+
+    </main>
+
+    <script src="https://code.jquery.com//jquery-3.7.1.min.js" type="text/javascript"></script>
+    <!-- -END CSS & JS CODE FOR SEARCH HISTORY -->
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" lid="2" />
+
+
+</body>
+
+</html>

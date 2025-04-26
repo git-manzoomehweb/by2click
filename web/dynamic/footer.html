@@ -1,0 +1,219 @@
+<footer>
+    <section class="bg-primary-50 py-3">
+        <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+            <ul class="flex items-center justify-between lg:justify-center lg:gap-20">
+                <li class="text-primary-500 text-sm"><a href="/" rel="nofollow" class="group relative">Home
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                <li class="text-primary-500 text-sm"><a href="/hotels" rel="nofollow" class="group relative">Hotel
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                <li class="text-primary-500 text-sm"><a href="/blog" rel="nofollow" class="group relative">Blog
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                <li class="text-primary-500 text-sm"><a href="/contact-us" rel="nofollow" class="group relative">Contact us
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="bg-primary-100 py-5">
+        <div
+            class="flex flex-col gap-3 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl lg:flex-row lg:justify-between">
+            <basis core="print" datamembername="db.info">
+                <layout>
+                    <div>
+                        <h2 class="text-primary-800 font-medium">Address</h2>
+                        @child
+                    </div>
+                </layout>
+                <face filter="TypeID in(244)">
+                    <div class="text-zinc-800 text-sm text-justify">@largetext</div>
+                </face>
+            </basis>
+            <div class="flex flex-col">
+                <h2 class="text-primary-800 font-medium">Contact Us</h2>
+                <basis core="print" datamembername="db.info">
+                    <layout>
+                        <div class="flex flex-col gap-4 lg:flex-row">
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="TypeID in(240)">
+                        <a href="tel:@text"
+                            class="relative group text-zinc-800 text-sm text-justify transition-all duration-300 hover:text-primary-600">@text
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                        </a>
+                    </face>
+                </basis>
+
+            </div>
+            <basis core="print" datamembername="db.info">
+                <face filter="TypeID in(242)">
+                    <a href="mailto:@text" class="flex flex-col">
+                        <h2 class="text-primary-800 font-medium">Email</h2>
+                        <div
+                            class="relative group text-zinc-800 text-sm text-justify transition-all duration-300 hover:text-primary-600">
+                            @text
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                        </div>
+                    </a>
+                </face>
+            </basis>
+        </div>
+    </section>
+    <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex flex-col lg:flex-row mt-7 lg:gap-3">
+        <basis core="print" datamembername="db.info">
+            <layout>
+                <section>
+                    <img src="[##cms.cms.cdn##]/images/main-logo.jpg" alt="logo" class="h-13 object-cover" width="87" height="53" loading="lazy">
+                    @child
+                </section>
+            </layout>
+            <face filter="TypeID in(144)">
+                <div class="text-zinc-900 text-justify text-sm mt-2">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+        <section class="mt-3 lg:mt-0">
+            <h2 class="text-zinc-800 font-medium mb-2">Follow me</h2>
+            <basis core="print" datamembername="db.info">
+                <layout>
+                    <div class="flex items-center justify-between lg:gap-2">
+                        @child
+                    </div>
+                </layout>
+                <face filter="TypeID in('245') and text in('Telegram')">
+                    <a href="@largetext" rel="noopener" aria-label="telegram"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span
+                            class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26" class="">
+                            <use xlink:href="./images/sprite-icons.svg#icon-telegram"></use>
+                        </svg>
+
+                    </a>
+                </face>
+                <face filter="TypeID in('245') and text in('linkedin')">
+                    <a href="@largetext" rel="noopener" aria-label="linkdin"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span
+                            class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26" class="">
+                            <use xlink:href="./images/sprite-icons.svg#icon-linkdin"></use>
+                        </svg>
+                    </a>
+                </face>
+                <face filter="TypeID in('245') and text in('Twitter')">
+                    <a href="@largetext" rel="noopener" aria-label="twitter"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span
+                            class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26" class="">
+                            <use xlink:href="./images/sprite-icons.svg#icon-twitter"></use>
+                        </svg>
+
+                    </a>
+                </face>
+                <face filter="TypeID in('245') and text in('Instagram')">
+                    <a href="@largetext" rel="noopener" aria-label="instagram"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span
+                            class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="25" height="26" class="">
+                            <use xlink:href="./images/sprite-icons.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </face>
+            </basis>
+        </section>
+    </div>
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8">
+        <div class="flex items-center gap-1 mb-6">
+            <svg width="41" height="41">
+                <use xlink:href="./images/sprite-icons.svg#icon-open-mail"></use>
+            </svg>
+            <h2 class="text-zinc-700 font-bold">Subscribe to our news channel</h2>
+        </div>
+        <div class=" footer-form" id="footer-form-resize">
+
+            <div class="flex flex-col mx-auto lg:flex-row">
+                <basis core="schema" run="atclient"
+                schemaurl="/schema/domainform/0C8B2195-68BE-4715-9170-C78FF003C262/23B10F70-95D9-4901-BFAE-821852276DE5/en/Subscribe-to-our-news-channel"
+                displaymode="new" button="[data-btn-uploadfooter]" resultsourceid="upload.datafooter"
+                OnRendered="RenderFormFooter"></basis>
+            <basis core="api" if="{##cms.uploadFooter.run|(false)##}" run="atclient"
+                url="/schema/domainform/0C8B2195-68BE-4715-9170-C78FF003C262/en/editobject" method="post"
+                body="object_edit={##cms.uploadFooter.value##}&captcha={##cms.uploadFooter.captcha##}&captchaid={##cms.uploadFooter.captchaid##}"
+                content-type="application/x-www-form-urlencoded" triggers='cms.uploadFooter'
+                OnProcessed="OnProcessedEditObjectFooter"></basis>
+            <basis core="callback" run="atclient" method="uploadDocumentFooter" triggers="upload.datafooter">
+            </basis>
+
+            <div class="flex flex-1 flex-col items-center captcha-button lg:gap-6 lg:flex-row">
+                <div id="captchaContainer"
+                    class="captchaContainerclass captcha-sefaresh flex flex-1 items-center max-xl:ml-0 max-xl:mb-[20px]"
+                    data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+                    data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+                    <basis core="dbsource" source="trust_login" name="captcha" run="atclient"
+                        triggers="captcha.refreshFooter">
+                        <member name="code" type="scalar" request="captcha"></member>
+                    </basis>
+                    <basis datamembername="captcha.code" core="print" run="atclient">
+                        <face>
+                            <script type="text/template"><div class="mt-2 d-inline-block lg:mt-0"><div class="flex flex-col justify-between lg:gap-6 lg:flex-row">
+        
+                            <div class="float-right flex-1"><input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                            <div class="flex items-center justify-between gap-8 mt-6 lg:mt-0">
+                                <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16" />
+                                <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaFooter()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#18181B"/></svg>
+                            </div>
+                            
+                        </div></div></script>
+                        </face>
+                    </basis>
+                </div>
+                <button class="relative group z-10 w-full lg:w-40 px-4 mt-3 text-white transition-all duration-300 lg:ml-5 lg:mt-0 y-2 data-body-btn h-14 bg-primary-800 rounded-lg"
+                    type="button" data-btn-uploadfooter><span class="">Send</span>
+                    <div
+                    class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg -z-10">
+                </div>
+                </button>
+
+            </div>
+            </div>
+            <div
+            class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
+            <div id="ballsWaveG" class="text-base font-normal leading-normal ext-zinc-50">
+                <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                <div id="ballsWaveG_8" class="ballsWaveG"></div>
+            </div>
+        </div>
+            <div class="mt-4 text-center text-primary-800 message-api"></div>
+        </div>
+    </section>
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-3 mb-3 lg:flex lg:gap-5 lg:mt-14">
+        <a href="https://basisfly.ae/" target="_blank"
+            class="flex text-zinc-600 text-sm justify-center text-center transition-all duration-300 hover:text-primary-600">
+            Web Design & Online Reservation By</a>
+        <div class="mt-2 flex items-center justify-center gap-2 lg:justify-between lg:flex-1 lg:items-center lg:mt-0">
+            <img src="[##cms.cms.cdn##]/images/basisfly-logo.png" alt="basisfly-logo" width="68" height="17"
+                loading="lazy">
+            <img src="[##cms.cms.cdn##]/images/trust-login.png" alt="trust-login" width="90" height="15" loading="lazy">
+        </div>
+    </section>
+</footer>
+<basis core="call" file="script.inc" lid="2"></basis>

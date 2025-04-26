@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+        <section class="relative z-30 bg-white rounded-2xl lg:rounded-3xl">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex items-center gap-2 h-14 lg:h-20 lg:flex-row-reverse lg:w-full lg:justify-between">
+                    <div class="flex items-center">
+                        <svg width="48" height="48" class="flex-shrink-0 cursor-pointer bars3 lg:hidden"
+                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M32 32H16C15.448 32 15 31.553 15 31C15 30.447 15.448 30 16 30H32C32.552 30 33 30.447 33 31C33 31.553 32.552 32 32 32Z"
+                                fill="#3469B4" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M32 18H16C15.448 18 15 17.553 15 17C15 16.447 15.448 16 16 16H32C32.552 16 33 16.447 33 17C33 17.553 32.552 18 32 18Z"
+                                fill="#3469B4" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M32 25H16C15.448 25 15 24.553 15 24C15 23.447 15.448 23 16 23H32C32.552 23 33 23.447 33 24C33 24.553 32.552 25 32 25Z"
+                                fill="#3469B4" />
+                        </svg>
+                        <div
+                            class="Login_Information relative group z-10 flex items-center text-white text-center transition-all cursor-pointer duration-300 rounded-lg bg-primary-800 pl-4 pr-6 py-4">
+                            <div
+                                class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg -z-10">
+                            </div>
+                            <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
+                            <div class="flex items-center justify-center gap-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.4009 14.5156C7.42189 14.5156 5.19189 17.2696 5.19189 19.9996C5.19189 20.1986 5.27089 20.3896 5.41189 20.5306C5.55189 20.6706 5.74289 20.7496 5.94189 20.7496L18.8599 20.7316C19.2739 20.7306 19.6089 20.3946 19.6089 19.9816C19.6089 17.2606 17.3799 14.5156 12.4009 14.5156Z"
+                                        fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.4009 13.001C15.0889 13.001 17.2759 10.813 17.2759 8.125C17.2759 5.437 15.0889 3.25 12.4009 3.25C9.71288 3.25 7.52588 5.437 7.52588 8.125C7.52588 10.813 9.71288 13.001 12.4009 13.001Z"
+                                        fill="#fff" />
+                                </svg>
+                                <span>Login/Register</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center h-full gap-5">
+                        <a href="/"><img src="../assets/images/main-logo.jpg" alt="logo-header" width="110" height="48"
+                                loading="lazy" class="hidden transition-all duration-300 lg:block hover:scale-90" /></a>
+                        <nav class="hidden h-full lg:flex">
+                            <ul class="flex items-center gap-14">
+                                <li class="flex">
+                                    <a href="/Articles"
+                                        class="transition-all duration-300 text-zinc-400 hover:text-primary-700 font-medium">
+                                        Home</a>
+                                </li>
+                                <li class="flex items-center h-full">
+                                    <a href=""
+                                        class="flex items-center transition-all duration-300 text-zinc-400 hover:text-primary-700 font-medium">
+                                        Hotel</a>
+                                </li>
+                                <li class="flex items-center h-full">
+                                    <a href=""
+                                        class="flex items-center transition-all duration-300 text-zinc-400 hover:text-primary-700 font-medium">
+                                        Blog</a>
+                                </li>
+                                <li class="flex items-center h-full">
+                                    <a href=""
+                                        class="flex items-center transition-all duration-300 text-zinc-400 hover:text-primary-700 font-medium">
+                                        Contact us</a>
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href="Hotels"
+                                        class="flex items-center gap-2 transition-all duration-300 h-full group text-zinc-900 hover:text-secondary-600 font-medium">
+                                        بیشتر
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" stroke="#242453" stroke-width="1.5"
+                                                class="group-hover:stroke-secondary-600" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-2 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li
+                                            class="py-1 px-2 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
+                                            <a href=""
+                                                class="transition-all duration-300 block text-secondary-800 group-hover/leveltwo:text-white">ویزای
+                                                شینگن</a>
+                                        </li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+
+
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <a href="/"><img src="../assets/images/main-logo.jpg" alt="logo-header" width="76" height="34"
+                        loading="lazy" class="transition-all duration-300 lg:hidden hover:scale-90" /></a>
+            </div>
+            <!-- header menu -->
+            <div
+                class="header-menu bg-white fixed z-30 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
+                <div>
+                    <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
+                        <a href="/"><img src="../assets/images/main-logo.jpg" alt="logo-header" width="94" height="34"
+                                loading="lazy" class="transition-all duration-300 hover:scale-105" /></a>
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            class="cursor-pointer header-menu-close" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                                fill="#284E65" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="pb-5 bg-white w-[90%] mx-auto">
+                    <nav class="pt-2">
+                        <ul class="text-sm divide-y divide-primary-50">
+                            <li class="py-3"><a href="/" class="text-zinc-900">Home</a></li>
+                            <li class="flex items-center py-3 ">
+                                <a href="" class="w-full text-zinc-900">Hotel</a>
+                            </li>
+                            <li class="flex items-center py-3 ">
+                                <a href="" class="w-full text-zinc-900">Blog</a>
+                            </li>
+                            <li class="flex items-center py-3 ">
+                                <a href="" class="w-full text-zinc-900">Contact us</a>
+                            </li>
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-zinc-900">مجله گردشگری</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-zinc-900">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- header menu -->
+        </section>
+    </header>
+
+    <footer>
+        <section class="bg-primary-50 py-3">
+            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <ul class="flex items-center justify-between lg:justify-center lg:gap-20">
+                    <li class="text-primary-500 text-sm"><a href="" class="group relative">Home
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                    <li class="text-primary-500 text-sm"><a href="" class="group relative">Hotel
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                    <li class="text-primary-500 text-sm"><a href="" class="group relative">Blog
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                    <li class="text-primary-500 text-sm"><a href="" class="group relative">Contact us
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="bg-primary-100 py-5">
+            <div
+                class="flex flex-col gap-3 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl lg:flex-row lg:justify-between">
+                <div>
+                    <h2 class="text-primary-800 font-medium">Address</h2>
+                    <div class="text-zinc-800 text-sm text-justify">Office No. 306, Malik Salma Ali Saif Bin Harib Al
+                        Muhairi Building - Al Murar Muraqqabat</div>
+                </div>
+                <a href="tel:" class="flex flex-col">
+                    <h2 class="text-primary-800 font-medium">Contact Us</h2>
+                    <div class="relative group text-zinc-800 text-sm text-justify transition-all duration-300 hover:text-primary-600">+98556523113
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </div>
+                </a>
+                <a href="mailto:" class="flex flex-col">
+                    <h2 class="text-primary-800 font-medium">Email</h2>
+                    <div class="relative group text-zinc-800 text-sm text-justify transition-all duration-300 hover:text-primary-600">Sapport@yahoo.com
+                        <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex flex-col lg:flex-row mt-7 lg:gap-3">
+            <section>
+                <img src="../assets/images/main-logo.jpg" alt="" width="87" height="53" loading="lazy">
+                <div class="text-zinc-900 text-justify text-sm mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+                    rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis.
+                    Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin.
+                    Sapien
+                    faucibus et molestie ac feugiat sed lectus vestibulum.
+                </div>
+            </section>
+            <section class="mt-3 lg:mt-0">
+                <h2 class="text-zinc-800 font-medium mb-2">Follow me</h2>
+                <div class="flex items-center justify-between lg:gap-2">
+                    <a href="" rel="noopener" aria-label="telegram"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26"
+                            class="">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-telegram"></use>
+                        </svg>
+
+                    </a>
+
+                    <a href="" rel="noopener" aria-label="linkdin"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26"
+                            class="">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-linkdin"></use>
+                        </svg>
+                    </a>
+
+                    <a href="" rel="noopener" aria-label="twitter"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="26" height="26"
+                            class="">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-twitter"></use>
+                        </svg>
+
+                    </a>
+
+                    <a href="" rel="noopener" aria-label="instagram"
+                        class="relative group z-10 w-12 h-12 border border-primary-800 flex items-center justify-center rounded-full overflow-hidden">
+                        <span class="absolute -bottom-1 -z-10 left-0 w-full h-full bg-primary-100 transform translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-hover:bottom-0"></span>
+                        <svg width="25" height="26"
+                            class="">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8">
+            <div class="flex items-center gap-1 mb-6">
+                <svg width="41" height="41">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-open-mail"></use>
+                </svg>
+                <h2 class="text-zinc-700 font-bold">Subscribe to our news channel</h2>
+            </div>
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-3 lg:flex lg:gap-5 lg:mt-14">
+            <a href="https://www.basisfly.com/" target="_blank"
+                class="flex text-zinc-600 text-sm justify-center text-center transition-all duration-300 hover:text-secondary-600">
+                Web Design & Online Reservation By</a>
+            <div
+                class="mt-2 flex items-center justify-center gap-2 lg:justify-between lg:flex-1 lg:items-center lg:mt-0">
+                <img src="../assets/images/basisfly-logo.png" alt="basisfly-logo" width="68" height="17" loading="lazy">
+                <img src="../assets/images/trust-login.png" alt="trust-login" width="90" height="15" loading="lazy">
+            </div>
+        </section>
+    </footer>
+    <script src="../assets/js/alsama-core.js"></script>
+</body>
+
+</html>

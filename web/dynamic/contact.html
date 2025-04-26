@@ -1,0 +1,294 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376382">
+    <member name="about-us" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376392">
+    <member name="our-service" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376278">
+    <member name="slogan-list" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376393">
+    <member name="our-goal" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="11" name="db">
+    <member name="personel" type="list" order="ord" size="288x226" propertyid="2732" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
+    <meta name="description"
+        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+    <!-- Taglist -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+</head>
+
+<body>
+    <basis core="call" file="header.inc" lid="2" />
+    <main>
+        <section class="relative bg-contactBg bg-center bg-cover pt-40">
+            <div class="absolute bg-primary-800 mix-blend-hard-light inset-0 w-full h-full"></div>
+            <div class="absolute bg-specialcolor-1 inset-0 w-full h-full"></div>
+            <div>
+                <basis core="print" datamembername="db.about-us">
+                    <layout>
+                        <div
+                            class="relative z-10 flex flex-col items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                            @child
+                        </div>
+                    </layout>
+                    <face>
+                        <h1 class="text-3xl text-white mb-7 font-bold">@text</h1>
+                        <div class="text-white text-sm text-center max-w-[824px]">@largetext</div>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.info">
+                    <layout>
+                        <div
+                            class="relative z-10 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex justify-center items-center gap-2 mt-7">
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="TypeID in('245') and text in('Telegram')">
+                        <a href="@largetext" rel="noopener" aria-label="telegram"
+                            class="relative z-10 w-12 h-12 border border-white flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 hover:border-primary-500 hover:animate-bounce">
+                            <svg width="26" height="26" class="">
+                                <use xlink:href="./images/sprite-icons.svg#icon-telegram-white"></use>
+                            </svg>
+                        </a>
+                    </face>
+                    <face filter="TypeID in('245') and text in('linkedin')">
+                        <a href="@largetext" rel="noopener" aria-label="linkdin"
+                            class="relative z-10 w-12 h-12 border border-white flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 hover:border-primary-500 hover:animate-bounce">
+                            <svg width="26" height="26" class="">
+                                <use xlink:href="./images/sprite-icons.svg#icon-linkdin-white"></use>
+                            </svg>
+                        </a>
+                    </face>
+                    <face filter="TypeID in('245') and text in('Twitter')">
+                        <a href="@largetext" rel="noopener" aria-label="twitter"
+                            class="relative z-10 w-12 h-12 border border-white flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 hover:border-primary-500 hover:animate-bounce">
+                            <svg width="26" height="26" class="">
+                                <use xlink:href="./images/sprite-icons.svg#icon-twitter-white"></use>
+                            </svg>
+
+                        </a>
+                    </face>
+                    <face filter="TypeID in('245') and text in('Instagram')">
+                        <a href="@largetext" rel="noopener" aria-label="instagram"
+                            class="relative z-10 w-12 h-12 border border-white flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 hover:border-primary-500 hover:animate-bounce">
+                            <svg width="25" height="26" class="">
+                                <use xlink:href="./images/sprite-icons.svg#icon-instagram-white"></use>
+                            </svg>
+                        </a>
+                    </face>
+                </basis>
+
+
+                <div class="relative py-5 mt-32">
+                    <div class="bg-specialcolor-2 absolute inset-0 w-full h-full"></div>
+                    <div class="relative z-10 flex justify-between mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                        <basis core="print" datamembername="db.info">
+                            <face filter="TypeID in(244)">
+                                <div class="flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-location-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Address</h2>
+                                        <div class="text-sm text-justify text-primary-50">@largetext</div>
+                                    </div>
+                                </div>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.info">
+                            <layout>
+                                <div class="group flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0 group-hover:animate-shake">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-phone-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Contact Us</h2>
+                                        <div class="flex gap-4">
+                                            @child
+                                        </div>
+                                    </div>
+                                </div>
+                            </layout>
+                            <face filter="TypeID in(240)">
+                                <a href="tel:@text"
+                                    class="relative text-primary-50 text-sm text-justify transition-all duration-300 hover:text-primary-400">
+                                    @text
+                                </a>
+                            </face>
+                        </basis>
+
+                        <basis core="print" datamembername="db.info">
+                            <face filter="TypeID in(242)">
+                                <a href="mailto:@text" class="group flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0 group-hover:animate-bounce">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-email-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Email</h2>
+                                        <div
+                                            class="relative text-primary-50 text-sm text-justify transition-all duration-300 group-hover:text-primary-400">
+                                            @text
+                                        </div>
+                                    </div>
+                                </a>
+                            </face>
+                        </basis>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <basis core="print" datamembername="db.info">
+            <layout>
+                <section>
+                    @child
+                </section>
+            </layout>
+            <face filter="prpID=91462">
+                <iframe defer title="alsama location" class="h-32 object-cover" width="100%" height="123" loading="lazy"
+                    target="_blank" allowfullscreen
+                    src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"></iframe>
+            </face>
+        </basis>
+
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8">
+            <basis core="print" datamembername="db.personel">
+                <layout>
+                    <div class="grid grid-cols-5 gap-3">
+                        @child
+                    </div>
+                </layout>
+                <face>
+                    <div class="group">
+                        <img src="@00288X00226prp"
+                            class="h-56 object-cover rounded-lg transition-all duration-1000 group-hover:[transform:rotateY(360deg)]"
+                            alt="@title" width="100%" height="226" loading="lazy">
+                        <h2 class="text-zinc-600 font-bold text-xl mb-2 mt-3">@prp_2732</h2>
+                        <span
+                            class="text-zinc-500 text-sm transition-all duration-300 group-hover:text-primary-600">@title</span>
+                    </div>
+                </face>
+            </basis>
+
+        </section>
+        <section class="flex gap-8 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-16">
+            <basis core="print" datamembername="db.our-service">
+                <layout>
+                    <div class="w-[576px]">
+                        @child
+                    </div>
+                </layout>
+                <face filter="TypeID in(128)">
+                    <iframe width="100%" height="364" class="rounded-xl h-[364px] object-cover" src="@text"
+                        allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </face>
+            </basis>
+
+            <basis core="print" datamembername="db.our-service">
+                <layout>
+                    <div class="flex-1">
+                        @child
+                    </div>
+                </layout>
+                <face filter="TypeID in(150)">
+                    <h2 class="text-zinc-800 font-bold text-2xl mb-3">@text</h2>
+                </face>
+                <face filter="TypeID in(129)">
+                    <div class="text-zinc-900 text-sm">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-16">
+            <basis core="print" datamembername="db.slogan-list">
+                <layout>
+                    <div class="flex items-center gap-20">
+                        @child
+                    </div>
+                </layout>
+                <face filter="valueID in(4134418)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-headphone"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134419)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-flag"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134420)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-wallet"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+                <face filter="valueID in(4134421)">
+                    <div class="flex flex-col items-center">
+                        <svg width="82" height="82">
+                            <use xlink:href="./images/sprite-icons.svg#icon-shield"></use>
+                        </svg>
+                        <h2 class="text-zinc-900 text-xl font-bold mt-6">@text</h2>
+                        <div class="text-zinc-900 text-sm mt-3 text-center">@largetext</div>
+                    </div>
+                </face>
+            </basis>
+        </section>
+        <basis core="print" datamembername="db.our-goal">
+            <layout>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-16 mb-24">
+                    @child
+                </section>
+            </layout>
+            <face>
+                <h2 class="text-3xl font-bold text-zinc-900 mb-3">@text</h2>
+                <div class="text-zinc-900 text-sm text-justify">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+
+    </main>
+    <basis core="call" file="footer.inc" lid="2" />
+</body>
+
+</html>

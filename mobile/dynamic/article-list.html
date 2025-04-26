@@ -1,0 +1,240 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214240">
+    <member name="hot-news" type="list" link="article.bc" order="ord" size="288x187" propertyid="7244,7249,3087660"
+        perpage="6" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
+    <member name="our-history" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="article-list">
+    <member name="cat" type="tree" request="cat" parentid="214233" order="ord"></member>
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
+    <meta name="description"
+        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+    <!-- Taglist -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body>
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <main>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+            <div class="flex flex-col items-center">
+                <basis core="print" datamembername="db.scalar">
+                    <face>
+                        <h1 class="text-zinc-900 font-bold text-xl mb-2">@column1</h1>
+                    </face>
+                </basis>
+
+                <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+                    class="relative flex items-center text-sm gap-1 mt-2">
+                    <li class="inline-block font-normal text-zinc-700" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a class="text-zinc-700 hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
+                                itemprop="name">Home</span>
+                            <meta itemprop="position" content="1" />
+                        </a>
+                    </li>
+                    <span class="text-zinc-700"> > </span>
+                    <basis core="print" datamembername="db.navigation">
+                        <face filter="RowNumber=max(RowNumber) and parentcatid<>214170">
+                            <li class="inline-block font-normal text-zinc-700" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </li>
+                        </face>
+                        <face filter="link is null and parentcatid<>214170">
+                            <li class="flex gap-1 font-normal text-zinc-700" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-zinc-700 hover:text-primary-300" itemprop="item"
+                                    href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-zinc-700"> > </span>
+                            </li>
+                        </face>
+                        <face filter="parentcatid<>214170">
+                            <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-zinc-700 hover:text-primary-300" itemprop="item" href="@link"
+                                    aria-label="@title"><span class="text-zinc-700 hover:text-primary-300"
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-zinc-700"> > </span>
+                            </li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+            <form method="get" action="/search-content.bc" class="mt-3">
+                <input
+                    class="w-full border border-solid border-primary-400 bg-primary-50 text-zinc-400 px-4 h-14 rounded-lg outline-none"
+                    placeholder="Search blog" type="text" autocomplete="on" required name="search-content-name" />
+                <button type="submit" class="w-full bg-primary-800 py-4 rounded-lg mt-3 text-white">Search
+                </button>
+            </form>
+            <basis core="tree" datamembername="article-list.cat" idcol="catid" parentidcol="parentid"
+                nullvalue="214233">
+                <layout>
+                    <ul class="flex items-center gap-2 mt-7 overflow-x-auto whitespace-nowrap scrollbar-thin">
+                        @child
+                    </ul>
+                </layout>
+                <face>
+                    <li class="article-li rounded-[50px] bg-zinc-100 border border-zinc-300 py-2 px-5 text-zinc-500 text-sm"
+                        data-id="@catid">
+                        @title
+                    </li>
+                </face>
+            </basis>
+        </section>
+        <section
+            class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl border-y border-solid border-zinc-300 mt-7 pt-4 pb-3">
+            <div class="flex items-center gap-1 mb-6">
+                <svg width="44" height="46">
+                    <use xlink:href="./images/sprite-icons.svg#icon-fire"></use>
+                </svg>
+                <div>
+                    <h2 class="font-bold text-gradient text-xl">Hot news</h2>
+                    <h3 class="text-zinc-900 text-sm">Read the latest news here</h3>
+                </div>
+            </div>
+            <!-- Slider main container -->
+            <div class="swiper pb-10 swiper-article-list-mobile">
+                <basis core="list" datamembername="db.hot-news">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="swiper-slide">
+                            <div class="flex flex-col gap-3">
+                                <img src="@00288X00187prp" class="h-48 object-cover rounded-xl"
+                                    alt="@title" width="100%" height="187" loading="lazy">
+                                <h2 class="text-zinc-900 font-medium">@title</h2>
+                                <div class="text-sm text-justify text-zinc-900 line-clamp-8">@prp_7244</div>
+                                <div class="flex items-center gap-6">
+                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                        <svg width="24" height="24">
+                                            <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender">
+                                            </use>
+                                        </svg>
+                                        @prp_7249
+                                    </span>
+
+                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                        <svg width="24" height="24">
+                                            <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                        </svg>
+                                        @prp_3087660
+                                    </span>
+                                </div>
+                                <a href="/article.bc?id=@id"
+                                    class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
+                                    More</a>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="swiper-slide">
+                            <div class="flex flex-col gap-3">
+                                <img src="@00288X00187prp" class="h-48 object-cover rounded-xl"
+                                    alt="@title" width="100%" height="187" loading="lazy">
+                                <h2 class="text-zinc-900 font-medium">@title</h2>
+                                <div class="text-sm text-justify text-zinc-900 line-clamp-8">@prp_7244</div>
+                                <div class="flex items-center gap-6">
+                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                        <svg width="24" height="24">
+                                            <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender">
+                                            </use>
+                                        </svg>
+                                        @prp_7249
+                                    </span>
+
+                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                        <svg width="24" height="24">
+                                            <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                        </svg>
+                                        @prp_3087660
+                                    </span>
+                                </div>
+                                <a href="@link"
+                                    class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
+                                    More</a>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+            </div>
+
+        </section>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+            <div class="fetch-content-article" data-catid="[##cms.query.catid##]">
+
+            </div>
+        </section>
+        <basis core="print" datamembername="db.our-history">
+            <layout>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-6">
+                    @child
+                </section>
+            </layout>
+            <face filter="TypeID in(150)">
+                <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
+            </face>
+            <face filter="TypeID in(129)">
+                <div class="text-zinc-900 text-sm text-justify">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+
+    </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+</body>
+
+</html>

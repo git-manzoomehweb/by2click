@@ -1,0 +1,179 @@
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" q="[##cms.query.search-content-name##]">
+    <member name="article-list" type="list" link="article.bc" order="ord" size="288x234"
+        propertyid="7244,7249,3087660" pageno="[##cms.query.pagenum|(1)##]" perpage="3" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
+    <meta name="description"
+        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+    <!-- Taglist -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body>
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+    <main>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-8">
+            <h1 class="text-zinc-900 font-bold text-xl mb-8">Articles</h1>
+            <basis core="list" datamembername="db.article-list">
+                <layout>
+                    <div class="flex flex-col gap-3">
+                        <!-- items -->
+                        @child
+                    </div>
+                </layout>
+                <face filter="link in null">
+                    <div class="flex flex-col gap-3">
+                        <img src="@00288X00234prp" class="h-48 object-cover rounded-xl" alt="@title"
+                            width="100%" height="187" loading="lazy">
+                        <h2 class="text-zinc-900 font-medium">@title</h2>
+                        <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                        <div class="flex items-center gap-6">
+                            <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender"></use>
+                                </svg>
+                                @prp_7249
+                            </span>
+            
+                            <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                </svg>
+                                @prp_3087660
+                            </span>
+                        </div>
+                        <a href="/article.bc?id=@id" class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read More
+                        </a>
+                    </div>
+                </face>
+                <face>
+                    <div class="flex flex-col gap-3">
+                        <img src="@00288X00234prp" class="h-48 object-cover rounded-xl" alt="@title"
+                            width="100%" height="187" loading="lazy">
+                        <h2 class="text-zinc-900 font-medium">@title</h2>
+                        <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                        <div class="flex items-center gap-6">
+                            <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender"></use>
+                                </svg>
+                                @prp_7249
+                            </span>
+            
+                            <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                                </svg>
+                                @prp_3087660
+                            </span>
+                        </div>
+                        <a href="@link" class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read More
+                        </a>
+                    </div>
+                </face>
+            </basis>
+
+            <div id="paging" class="flex justify-center mt-6">
+                <ul class="flex items-center gap-1 cd-pagination no-space dir-ltr" id="wibpaging">
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full cursor-pointer"
+                                    aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full cursor-pointer"
+                                    aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-white page-number bg-primary-800"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
+                        </face>
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-white page-number bg-primary-800"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer "
+                                    aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
+</body>
+
+</html>
